@@ -1,0 +1,39 @@
+1.Install first npm
+http://jjasonclark.com/how-to-setup-node-behind-web-proxy/
+2. setup proxy
+npm config set proxy http://webproxy.wlb.nsroot.net:8080/
+npm config set https-proxy http://webproxy.wlb.nsroot.net:8080/
+3 . update npm to latest
+ npm i -g npm@latest
+4. install python
+Install python : version 2.7.11
+https://www.python.org/getit/windows/
+5. Install Microsoft Visual Studio C++ 2013 Desktop Express version:
+
+6.
+•Install node-gyp: npm install -g node-gyp
+
+7. npm i webdriver-manager
+
+node node_modules\webdriver-manager\bin\webdriver-manager --proxy http://webproxy.wlb.nsroot.net:8080/ update
+
+node node_modules\webdriver-manager\bin\webdriver-manager start
+
+
+This is run only once on setting up the project. If the project has the directory node-module then you dont need to run this
+
+8.Go the path of the code as Admin 
+type : npm install --save-dev jasmine karma karma-jasmine karma-chrome-launcher grunt-cli grunt-karma
+
+
+Run from eclipse, how to test angular : http://127.0.0.1:8888/ocangular/app/ocApp.html#/scale/createNewScale
+
+
+
+For e2e unit testing, need to install protractor:
+$ npm install -g protractor
+
+For start Selenium server:
+$ webdriver-manager update
+$ webdriver-manager start
+
