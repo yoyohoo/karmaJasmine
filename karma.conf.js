@@ -5,7 +5,7 @@ module.exports = function(config) {
     config.set({
 
         // base path that will be used to resolve all patterns (eg. files, exclude)
-        basePath: '../ocangular/',
+        basePath: '../../ocTest/',
 
 
         // frameworks to use
@@ -15,36 +15,36 @@ module.exports = function(config) {
 
         // list of files / patterns to load in the browser
         files: [
-            'app/assets/js/jquery-2.1.4.min.js',
-            'app/assets/js/bootstrap.min.js',
-            'ocTest/js/lib/angular.js',
-            'ocTest/js/lib/angular-mocks.js',
-            'app/assets/angularjs/angular-resource.min.js',
-            'app/assets/js/angular-css-injector.js',
-            'app/assets/node_modules/angular-new-router/dist/router.es5.js',
-            'app/assets/angularjs/angular-animate.min.js',
-            'app/assets/angularjs/angular-messages.min.js',
-            'app/assets/js/ui-bootstrap-tpls-0.12.1.min.js',
-            'app/assets/js/angular-local-storage.min.js',
-            'app/assets/js/angular-preload-image.min.js',
-            'app/assets/kendo/js/jszip.min.js',
-            'app/assets/kendo/js/kendo.all.min.js',
-            'app/assets/datepicker/moment.js',
-            'app/assets/datepicker/ng-bs3-datepicker.js',
-            'app/assets/nghandsontable/handsontable.full.js',
-            'app/assets/nghandsontable/ngHandsontable.js',
-            'app/assets/ngdialog/ngDialog.js',
-            'app/assets/js/autogrow-textarea.js',
+            '../app/assets/js/jquery-2.1.4.min.js',
+            '../app/assets/js/bootstrap.min.js',
+            'js/lib/angular.js',
+            'js/lib/angular-mocks.js',
+            '../app/assets/angularjs/angular-resource.min.js',
+            '../app/assets/js/angular-css-injector.js',
+            '../app/assets/node_modules/angular-new-router/dist/router.es5.js',
+            '../app/assets/angularjs/angular-animate.min.js',
+            '../app/assets/angularjs/angular-messages.min.js',
+            '../app/assets/js/ui-bootstrap-tpls-0.12.1.min.js',
+            '../app/assets/js/angular-local-storage.min.js',
+            '../app/assets/js/angular-preload-image.min.js',
+            '../app/assets/kendo/js/jszip.min.js',
+            '../app/assets/kendo/js/kendo.all.min.js',
+            '../app/assets/datepicker/moment.js',
+            '../app/assets/datepicker/ng-bs3-datepicker.js',
+            '../app/assets/nghandsontable/handsontable.full.js',
+            '../app/assets/nghandsontable/ngHandsontable.js',
+            '../app/assets/ngdialog/ngDialog.js',
+            '../app/assets/js/autogrow-textarea.js',
             //
-            'app/appModules.js',
-            'app/appCore.js',
-            'app/appRoutes.js',
-            'app/services/appServices.js',
-            'app/components/rfdtax/RfdTaxController.js',
-            'app/components/rfdstate/RfdStateController.js',
-            'app/components/rfdsector/RfdSectorController.js',
+            '../app/appModules.js',
+            '../app/appCore.js',
+            '../app/appRoutes.js',
+            '../app/services/appServices.js',
+            '../app/components/rfdtax/RfdTaxController.js',
+            '../app/components/rfdstate/RfdStateController.js',
+            '../app/components/rfdsector/RfdSectorController.js',
             //
-            'ocTest/js/rcSpec.js'
+            'js/rcSpec.js'
         ],
 
 
@@ -60,24 +60,14 @@ module.exports = function(config) {
         // test results reporter to use
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
-        reporters: ['progress', 'junit', 'coverage'],
+        reporters: ['progress', 'junit'],
         junitReporter: {
-            outputDir: 'ocTest/testResults',
+            outputDir: 'karma-jasmine/testResults',
             outputFile: 'ocTestResults.xml',
             useBrowserName: false,
             suite: 'ocTest'
         },
-        coverageReporter: {
-          type : 'lcov',
-          dir : 'ocTest/testResults',
-          subdir: 'coverage'
-        },
-        preprocessors: {
-          // source files, that you wanna generate coverage for
-          // do not include tests or libraries
-          // (these files will be instrumented by Istanbul)
-          'app/components/*/*.js': ['coverage']
-        },
+
         // web server port
         port: 9876,
 
@@ -97,20 +87,16 @@ module.exports = function(config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        // 'Chrome','firefox'
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
         plugins: [
-            // 'karma-chrome-launcher',
-            // 'karma-firefox-launcher',
-            'karma-phantomjs-launcher',
+            'karma-chrome-launcher',
             'karma-jasmine',
-            'karma-junit-reporter',
-            'karma-coverage'
+            'karma-junit-reporter'
         ],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true,
+        singleRun: false,
 
         // Concurrency level
         // how many browser should be started simultaneous
